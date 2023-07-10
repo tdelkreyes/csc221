@@ -1,6 +1,6 @@
 from gasp import *
 begin_graphics()
-Circle((300, 200), 100)
+Circle((300, 100), 100)
 Circle((265, 220), 15)
 Circle((335, 220), 15)
 Arc((300, 200), 60, 225, 315)
