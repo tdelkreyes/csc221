@@ -1,6 +1,6 @@
 from gasp import *
 begin_graphics()
-Circle((300, 200), 100)
+Circle((300, 200), 150)
 Circle((265, 220), 15)
 Circle((335, 220), 15)
 Arc((300, 200), 60, 225, 315)
@@ -14,7 +14,7 @@ def moan():
 def twice(x):
     print(x, '*', x, 'is', x * x)
 def draw_face(x, y):
-    Circle((300, 200), 100)
+    Circle((300, 200), 150)
     Circle((265, 220), 15)
     Circle((335, 220), 15)
     Arc((300, 200), 60, 225, 315)
