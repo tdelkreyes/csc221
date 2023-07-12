@@ -8,6 +8,8 @@ Line((300, 220), (280, 180))
 Line((280, 180), (320, 180))
 Circle((265, 220), 10)
 Circle((335, 220), 10)
+Circle((265, 220), 10, color="black", filled=True)
+Circle((335, 220), 10, color="black", filled=True)
 
 def moan():
     print('Python is useless!')
