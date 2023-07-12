@@ -11,3 +11,6 @@ Circle((335, 220), 10)
 def moan():
     print('Python is useless!')
     print('And so are these worksheets.')
+def twice(x):
+    print(x, '*', x, 'is', x * x)
+    
