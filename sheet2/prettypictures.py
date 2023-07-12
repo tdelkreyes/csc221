@@ -22,3 +22,5 @@ def draw_face(x, y):
     Line((280, 180), (320, 180))
     Circle((265, 220), 10)
     Circle((335, 220), 10) 
+update_when('key_pressed')
+end_graphics()
