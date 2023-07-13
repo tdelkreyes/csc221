@@ -6,7 +6,7 @@ again = "yes"
 
 while again =="yes":
     number = randint(1, top)
-    print("Ok, I've thought of a number between 1 and 6.\n")
+    print(f"Ok, I've thought of a number between 1 and {top}.\n")
     prompt = "Make a guess: "
     answer = -1
     counter = 0
