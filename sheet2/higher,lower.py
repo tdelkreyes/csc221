@@ -19,3 +19,7 @@ while again =="yes":
 
     print("That was my number. Well done!")
     print(f'\nYou took {counter} guesses')
+    
+    again = input("Would you like another game? ")
+
+print("Ok. Bye!")
