@@ -8,7 +8,7 @@ while again =="yes":
     number = randint(1, top)
     print(f"Ok, I've thought of a number between 1 and {top}.\n")
     prompt = "Make a guess: "
-    answer = -1
+    answer = 896
     counter = 0
 
     while answer != number:
