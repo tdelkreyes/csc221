@@ -1,5 +1,6 @@
 from gasp import *
 begin_graphics()
+
 Circle((300, 200), 150, color="blue", filled=False, thickness=10)
 Circle((265, 220), 35)
 Circle((335, 220), 35)
