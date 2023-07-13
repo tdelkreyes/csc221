@@ -1,6 +1,6 @@
 from random import randint
 
-number - randint(1, 6)
+number = randint(1, 6)
 print("Ok, I've thought of a number between 1 and 6.\n")
 prompt = "Make a guess: "
 answer = -1
