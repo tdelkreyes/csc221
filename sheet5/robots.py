@@ -1,4 +1,10 @@
-from gasp import *          
+from gasp import *   
+
+from random import randint
+
+player_x= randint(0, 63)
+
+player_y= randint(0, 47)
 
 begin_graphics()            
 finished = False
