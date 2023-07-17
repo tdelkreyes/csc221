@@ -1,5 +1,4 @@
 from gasp import *   
-
 from random import randint
 
 begin_graphics()            
@@ -14,6 +13,8 @@ baller = Circle((bx, by), br)
 
 while bx < 645:
     move_to(baller, (bx + 4, by + 3))
+    bx = bx + 4 
+    by = by + 3
     sleep(0.02)
 
 def place_player():
