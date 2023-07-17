@@ -5,7 +5,7 @@ from random import randint
 player_x= randint(0, 63)
 
 player_y= randint(0, 47)
-baller=(5, 5, 5)
+
 
 begin_graphics()            
 finished = False
