@@ -12,8 +12,18 @@ def place_player():
 
     baller = Circle((10 * player_x + 5, 10 * player_y + 5), 5, filled=True)
     print("Here I am!")
+    print("I'm moving...")
 
-baller = Circle((bx, by), br)
+def move_player():
+    global player_x, player_y, baller
+
+    key = update_when('key_pressed')
+
+    if key == '6' and player_x < 63:
+        player_x += 1
+
+    
+    
 
 while bx < 645:
     move_to(baller, (bx + 4, by + 3))
@@ -21,9 +31,7 @@ while bx < 645:
     by = by + 3
     sleep(0.02)   
 
-def move_player():
-    print("I'm moving...")
-    update_when('key_pressed')
+
 
 place_player()
 
