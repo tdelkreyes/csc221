@@ -20,7 +20,6 @@ def place_player():
 
     baller = Circle((10 * player_x + 5, 10 * player_y + 5), 5, filled=True)
     print("Here I am!")
-    print("I'm moving...")
 
 def move_player():
     global player_x, player_y, baller
@@ -63,6 +62,8 @@ def move_player():
         if player_y < 47:
             player_y += 1
     move_to(baller, (10 * player_x + 5, 10 * player_y + 5))
+
+place_robot()
 
 place_player()
 
