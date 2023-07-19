@@ -6,6 +6,9 @@ finished = False
 
 player_x = randint(0, 63)
 player_y = randint(0, 47)
+navx = randint(0, 63)
+navy = randint(0, 47)
+
 
 def place_player():
     global baller
@@ -55,9 +58,6 @@ def move_player():
         if player_y < 47:
             player_y += 1
     move_to(baller, (10 * player_x + 5, 10 * player_y + 5))
-
-
-
 
 place_player()
 
