@@ -63,11 +63,29 @@ def move_player():
             player_y += 1
     move_to(baller, (10 * player_x + 5, 10 * player_y + 5))
 
+def move_robot():
+    global navx, navy, T1000, player_x, player_y
+
+    if player_x > navx:
+        navx =+ 1
+    elif player_x < navx:
+        navx -= 1
+    elif player_y > navy:
+        navy += navy
+    elif player_y < navy:
+        navy -= navy
+    move_to(T1000, (10 * navx + 5, 10 * navy + 5))
+
 place_robot()
 
 place_player()
 
 while not finished:
     move_player()
+
+def check_collisions():
+    finished = True
+    print("You've been caught!")
+    sleep(3)
 
 end_graphics()  
