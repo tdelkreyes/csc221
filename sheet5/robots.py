@@ -6,9 +6,11 @@ finished = False
 
 player_x = randint(0, 63)
 player_y = randint(0, 47)
-bx = 5
-by = 5
-br = 5
+
+def place_player():
+    global baller
+
+
 baller = Circle((bx, by), br)
 
 while bx < 645:
