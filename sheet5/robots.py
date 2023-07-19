@@ -12,7 +12,7 @@ navy = randint(0, 47)
 def place_robot():
     global T1000
 
-    T1000 = Box((10 * navx + 5, 10 * navy + 5), 5, color="red", filled=True)
+    T1000 = Circle((10 * navx + 5, 10 * navy + 5), 5, color="red", filled=True)
     print("destroy all Humans")
 
 def place_player():
@@ -75,7 +75,6 @@ def move_robot():
     elif player_y < navy:
         navy -= navy
     move_to(T1000, (10 * navx + 5, 10 * navy + 5))
-
 place_robot()
 
 place_player()
