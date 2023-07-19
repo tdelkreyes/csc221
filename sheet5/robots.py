@@ -9,6 +9,11 @@ player_y = randint(0, 47)
 navx = randint(0, 63)
 navy = randint(0, 47)
 
+def place_robot():
+    global T1000
+
+    T1000 = Box((10 * navx + 5, 10 * navy + 5), 5, color="red", filled=True)
+    print("destroy all Humans")
 
 def place_player():
     global baller
