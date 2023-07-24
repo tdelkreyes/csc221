@@ -65,6 +65,15 @@ def move_robot():
         navy -= 1
     move_to(T1000, (10 * navx + 5, 10 * navy + 5))
 
+finished = False
+
+def check_collisions():
+    global navx, navy,player_x, player_y, finished
+    if navx == player_x and navy == player_y:
+        finished = True
+        print ("You are Terminated")
+        sleep (3.00)
+
 place_robot()
 place_player()
 finished = False
