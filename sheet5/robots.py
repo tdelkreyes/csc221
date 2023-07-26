@@ -9,6 +9,19 @@ def place_robot():
     T1000 = Circle((10 * navx + 5, 10 * navy + 5), 5, color="red", filled=True)
     print("Destroy all Humans")
 
+def safe_player_place():
+    global player_shape,player_x,player_y, navx,navy
+    safety = 0
+    player_x = randint(0, 63)
+    player_y = randint(0, 47)
+    while safety == 0:
+        if navx == player_x and navy == player_y:
+            player_x = randint(0, 63)
+            player_y = randint(0, 47)
+        else:
+            player_shape = Circle((10 * player_x + 5, 10 * player_y + 5), 5, filled=True)
+            safety += 1
+
 def place_player():
     global player_shape,player_x,player_y
     player_x = randint(0, 63)
