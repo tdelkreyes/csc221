@@ -101,4 +101,4 @@ while not finished:
     move_player()
     move_robot()
     check_collisions()
-end_graphics()   
+end_graphics()      
