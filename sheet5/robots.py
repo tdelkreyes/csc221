@@ -10,12 +10,13 @@ def place_robots():
     global terminators
     terminators = []
     while len(terminators) < numbots:
-        t1000 = Robot()
-        t1000.x = randint(0, 47)
-        t1000.y = randint(0, 47)
-        if not crash(t1000,terminators):
-            t1000.form = Box((10 * t1000.x + 5, 10 * t1000.y + 5), 10, 10, color="red", filled=True)
-            terminators.append(t1000)
+        terminators = Robot()
+        terminators.x = randint(0, 47)
+        terminators.y = randint(0, 47)
+        if not crash(terminators,terminators):
+            terminators.form = Box((10 * terminators.x + 5, 10 * terminators.y + 5), 10, 10, color="red", filled=True)
+            terminators.append(terminators)
+            
 def safe_player_place():
     global player
     player = Player()
@@ -62,21 +63,23 @@ def move_player():
         if player.y < 47:
             player.y += 1
     move_to(player.shape, (10 * player.x + 5, 10 * player.y + 5))
-def move_robot():
-    global t1000
-    if player.x > t1000.x:
-        t1000.x += 1
-    elif player.x < t1000.x:
-        t1000.x -= 1
-    elif player.y > t1000.y:
-        t1000.y += 1
-    elif player.y < t1000.y:
-        t1000.y -= 1
-    move_to(t1000.form, (10 * t1000.x + 5, 10 * t1000.y + 5))
+
+def move_robots():
+    global terminators
+    if player.x > terminators.x:
+        terminators.x += 1
+    elif player.x < terminators.x:
+        terminators.x -= 1
+    elif player.y > terminators.y:
+        terminators.y += 1
+    elif player.y < terminators.y:
+        terminators.y -= 1
+    move_to(terminators.form, (10 * terminators.x + 5, 10 * terminators.y + 5))
 finished = False
+
 def crash(player,terminators):
-    for t1000 in terminators:
-        if t1000.x == player.x and t1000.y == player.y:
+    for terminators in terminators:
+        if terminators.x == player.x and terminators.y == player.y:
             return True
         else:
             return False
@@ -96,7 +99,7 @@ remove_from_screen(key_text)
 
 while not finished:
     move_player()
-    #move_robot()
+    
     check_collisions()
 
 end_graphics()         
