@@ -105,9 +105,8 @@ def check_collisions():
         key_text = Text("You are Terminated", (320, 240), size=48, color="red")
         sleep (3.00)
 
-place_robots()
 safe_player_place()
-finished = False
+
 key_text = Text("Run for your Life!", (320, 240), size=48)
 sleep(1)
 remove_from_screen(key_text)
