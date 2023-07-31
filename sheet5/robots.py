@@ -77,22 +77,20 @@ def move_robots():
         elif player.y < t1000.y:
             t1000.y -= 1
         move_to(t1000.form, (10 * t1000.x, 10 * t1000.y))
-
 finished = False
-
 def crash(player,terminators):
     for t1000 in terminators:
         if t1000.x == player.x and t1000.y == player.y:
             return True
         else:
             return False
+
 def check_collisions():
-    global finished
-    crash(player, terminators)
-    if crash == True:
+    global finished, terminators
+    if crash(player, terminators):
         key_text = Text("You are Terminated", (320, 240), size=48, color="red")
         sleep (3.00)
-        finished == True
+        return finished == True
 
 place_robots()
 
