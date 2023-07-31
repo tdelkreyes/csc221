@@ -19,14 +19,14 @@ def place_robots():
 def safe_player_place():
     global player
     player = Player()
-    crash(player, terminators)
-    while crash == True:
+    player.x = randint(0, 63)
+    player.y = randint(0, 47)
+    player.shape = Circle((10 * player.x + 5, 10 * player.y + 5), 5, filled=True)
+    if crash(player, terminators):
         player.x = randint(0, 63)
         player.y = randint(0, 47)
         player.shape = Circle((10 * player.x + 5, 10 * player.y + 5), 5, filled=True)
-        crash(player, terminators)
-    if crash == False:
-        player.shape = Circle((10 * player.x + 5, 10 * player.y + 5), 5, filled=True)
+
 def move_player(): 
     global player
     key = update_when('key_pressed')
@@ -72,12 +72,14 @@ def move_robots():
             t1000.x += 1
         elif player.x < t1000.x:
             t1000.x -= 1
-        elif player.y > t1000.y:
+        if player.y > t1000.y:
             t1000.y += 1
         elif player.y < t1000.y:
             t1000.y -= 1
-        move_to(t1000.form, (10 * t1000.x + 5, 10 * t1000.y + 5))
+        move_to(t1000.form, (10 * t1000.x, 10 * t1000.y))
+
 finished = False
+
 def crash(player,terminators):
     for t1000 in terminators:
         if t1000.x == player.x and t1000.y == player.y:
@@ -90,10 +92,11 @@ def check_collisions():
     if crash == True:
         key_text = Text("You are Terminated", (320, 240), size=48, color="red")
         sleep (3.00)
+        finished == True
+
 place_robots()
 
 safe_player_place()
-
 key_text = Text("Run for your Life!", (320, 240), size=48)
 sleep(1)
 remove_from_screen(key_text)
@@ -101,4 +104,4 @@ while not finished:
     move_player()
     move_robots()
     check_collisions()
-end_graphics()     
+end_graphics()      
